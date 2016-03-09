@@ -16,7 +16,7 @@ sudo parted -l  2>&1  |grep "Disk /"
 
 read -p "What is the name of the card you want to burn to? Example: sdd : "  DISK_ID
 
-DISK_INFO=$("parted -l 2>&1 |grep /dev/$DISK_ID" ) 
+DISK_INFO=$(parted -l 2>&1 |grep /dev/$DISK_ID ) 
 
  if [ -z "$DISK_INFO" ]
   then
